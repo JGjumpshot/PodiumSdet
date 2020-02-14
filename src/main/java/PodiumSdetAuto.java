@@ -39,6 +39,7 @@ class PodiumSdetAuto {
 
     @Test //enter podium iframe
     void openIframe() {
-
+        iframePage fillFrame = new iframePage(driver);
+        fillFrame.clickButton();
     }
 }
