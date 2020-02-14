@@ -12,7 +12,7 @@ class PodiumSdetAuto {
     void setup() {
         System.setProperty("webdriver.chrome.driver", "lib/chromedriver.exe");
         driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
         driver.get("https://www.podium.com/");
     }
 
@@ -45,8 +45,11 @@ class PodiumSdetAuto {
     }
 
     @Test //Test Login
-    void loginTest() {
+    void loginTest() throws InterruptedException {
         PodiumSplashPage enterLogin = new PodiumSplashPage(driver);
         enterLogin.clickLogin();
+        LoginPage completeLogin = new LoginPage(driver);
+        completeLogin.login("Jimmy@jammers.com", "J!mmY!sB0mb");
+        Thread.sleep(5000);
     }
 }
