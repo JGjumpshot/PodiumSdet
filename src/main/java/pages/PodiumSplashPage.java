@@ -10,6 +10,7 @@ public class PodiumSplashPage {
     private By watchDemo = By.cssSelector(".primary-button:nth-child(1)");
     private By solutions = By.cssSelector("#wp-megamenu-item-2423");
     private By leads = By.cssSelector("#wp-megamenu-item-2424 > a");
+    private By login = By.cssSelector("#menu-item-1317 > a");
     public PodiumSplashPage(WebDriver driver) {
         this.driver = driver;
     }
@@ -23,5 +24,9 @@ public class PodiumSplashPage {
         WebElement solutions = driver.findElement(this.solutions);
         actions.moveToElement(solutions).perform();
         driver.findElement(leads).click();
+    }
+
+    public void clickLogin() {
+        driver.findElement(login).click();
     }
 }

@@ -38,10 +38,15 @@ class PodiumSdetAuto {
     }
 
     @Test //enter podium iframe
-    void openIframe() throws InterruptedException {
+    void openIframe() {
         iframePage fillFrame = new iframePage(driver);
         fillFrame.clickButton();
         fillFrame.fillForm("Donovan Mitchell", "4352678433", "Ready for gameday");
-        Thread.sleep(5000);
+    }
+
+    @Test //Test Login
+    void loginTest() {
+        PodiumSplashPage enterLogin = new PodiumSplashPage(driver);
+        enterLogin.clickLogin();
     }
 }
