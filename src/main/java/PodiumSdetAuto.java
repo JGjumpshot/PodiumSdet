@@ -45,11 +45,17 @@ class PodiumSdetAuto {
     }
 
     @Test //Test Login
-    void loginTest() throws InterruptedException {
+    void loginTest() {
         PodiumSplashPage enterLogin = new PodiumSplashPage(driver);
         enterLogin.clickLogin();
         LoginPage completeLogin = new LoginPage(driver);
         completeLogin.login("Jimmy@jammers.com", "J!mmY!sB0mb");
-        Thread.sleep(5000);
     }
+
+    @Test //Footer form
+    void footerForm() {
+        MarketingPage finishForm = new MarketingPage(driver);
+        finishForm.fillOutForm("Danger", "Joe", "d@j.com", "Barry's Breakfast", "3230001234");
+    }
+
 }
