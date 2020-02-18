@@ -4,7 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.junit.Assert;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+
 
 public class LoginPage {
     private WebDriver driver;
@@ -24,6 +26,6 @@ public class LoginPage {
         driver.findElement(password).sendKeys(credentials);
         driver.findElement(signIn).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(error));
-        Assert.assertEquals(driver.findElement(error).getText(), "Incorrect email or password. Please try again.");
+        assertEquals(driver.findElement(error).getText(), "Incorrect email or password. Please try again.");
     }
 }

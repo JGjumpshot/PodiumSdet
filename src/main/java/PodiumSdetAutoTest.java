@@ -6,7 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import pages.*;
 import java.util.concurrent.TimeUnit;
 
-class PodiumSdetAuto {
+class PodiumSdetAutoTest {
     private static WebDriver driver = null;
     @BeforeEach
     void setup() {
