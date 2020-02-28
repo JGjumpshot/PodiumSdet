@@ -28,9 +28,9 @@ public class iframePage {
     }
 
     public void fillForm(String fullName, String contact, String reply) {
-
+        WebElement podiumModal = driver.findElement(this.podiumModal);
         driver.switchTo().defaultContent();
-        driver.switchTo().frame(2);
+        driver.switchTo().frame(podiumModal);
 
         //ExpectedConditions.presenceOfElementLocated(podiumModal);
 
